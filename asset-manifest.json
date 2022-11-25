@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/FrontendPractice-abstract/static/js/main.abb9fd78.js",
+    "main.js": "/FrontendPractice-abstract/static/js/main.5413ce72.js",
     "static/js/787.0e65bc35.chunk.js": "/FrontendPractice-abstract/static/js/787.0e65bc35.chunk.js",
     "index.html": "/FrontendPractice-abstract/index.html",
-    "main.abb9fd78.js.map": "/FrontendPractice-abstract/static/js/main.abb9fd78.js.map",
+    "main.5413ce72.js.map": "/FrontendPractice-abstract/static/js/main.5413ce72.js.map",
     "787.0e65bc35.chunk.js.map": "/FrontendPractice-abstract/static/js/787.0e65bc35.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.abb9fd78.js"
+    "static/js/main.5413ce72.js"
   ]
 }
