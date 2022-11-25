@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Anchor } from "react-feather";
+import MaxWidthWrapper from "../MaxWidthWrapper";
+import { QUERIES } from "../../styledsUtils/Breakpoints";
 
 interface ILinks {
 	title: string;
@@ -20,7 +22,7 @@ const Wrapper = styled.div`
 	color: var(--color-white);
 `;
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled(MaxWidthWrapper)`
 	display: grid;
 	padding-top: 3rem;
 	padding-left: 16px;
@@ -28,23 +30,30 @@ const FooterWrapper = styled.div`
 	row-gap: 3rem;
 	grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
 `;
+
+const ContentWrapper = styled(MaxWidthWrapper)`
+	display: flex;
+	flex-direction: column;
+`;
 export default function Footer() {
 	return (
 		<Wrapper>
-			<FooterWrapper>
-				{links.map((item) => (
-					<Section title={item.title} links={item.links} />
-				))}
-			</FooterWrapper>
+			<ContentWrapper>
+				<FooterWrapper>
+					{links.map((item) => (
+						<Section title={item.title} links={item.links} />
+					))}
+				</FooterWrapper>
 
-			<CopyRightSection>
-				<Logo>
-					<Anchor size={36} />
-				</Logo>
-				<CopyRight>&#169; Copyright 2022</CopyRight>
-				<CopyRight>Abstract Studio Design, Inc.</CopyRight>
-				<CopyRight>All rights reserved</CopyRight>
-			</CopyRightSection>
+				<CopyRightSection>
+					<Logo>
+						<Anchor size={36} />
+					</Logo>
+					<CopyRight>&#169; Copyright 2022</CopyRight>
+					<CopyRight>Abstract Studio Design, Inc.</CopyRight>
+					<CopyRight>All rights reserved</CopyRight>
+				</CopyRightSection>
+			</ContentWrapper>
 		</Wrapper>
 	);
 }
@@ -65,13 +74,15 @@ const Link = styled.li`
 `;
 
 const CopyRightSection = styled.div`
-	margin: 3rem 0;
+	margin: 6rem 0 3rem 0;
 	padding-left: 16px;
 	padding-right: 16px;
 	padding-bottom: 3rem;
-	display: flex;
-	flex-direction: column;
+
 	gap: 2px;
+	@media ${QUERIES.tabletAndUp} {
+		margin-left: auto;
+	}
 `;
 const Logo = styled.div`
 	margin-bottom: 1rem;

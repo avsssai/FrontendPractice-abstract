@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import { ArrowRight } from "react-feather";
 import data, { IData } from "./data";
+import { QUERIES } from "../../styledsUtils/Breakpoints";
 
 const SearchWrapper = styled.div`
 	background-color: var(--color-lavendar);
@@ -13,10 +14,14 @@ const ContentWrapper = styled(MaxWidthWrapper)`
 	padding-top: 80px;
 	padding-bottom: 120px;
 	text-align: center;
+
+	@media ${QUERIES.tabletAndUp} {
+		max-width: 600px;
+	}
 `;
 
 const Title = styled.h1`
-	font-size: clamp(32px, 2.5vw, 64px);
+	font-size: clamp(32px, 4vw, 64px);
 	font-weight: 300;
 	letter-spacing: -1.5px;
 	margin-bottom: 40px;
@@ -42,7 +47,13 @@ const SearchBox = styled.input`
 	box-shadow: var(--shadow-elevation-medium);
 `;
 
-const ItemsWrapper = styled(MaxWidthWrapper)``;
+const ItemsWrapper = styled(MaxWidthWrapper)`
+	display: grid;
+
+	@media ${QUERIES.tabletAndUp} {
+		grid-template-columns: repeat(2, 1fr);
+	}
+`;
 
 export default function Landing(): JSX.Element {
 	return (
@@ -71,8 +82,12 @@ export default function Landing(): JSX.Element {
 const CardWrapper = styled.div`
 	display: flex;
 	gap: 1rem;
-	align-items: center;
+	align-items: baseline;
 	margin-bottom: 6rem;
+
+	@media ${QUERIES.tabletAndUp} {
+		padding: 1rem;
+	}
 `;
 const ImageContainer = styled.div`
 	width: 60px;
@@ -83,11 +98,11 @@ const TextContainer = styled.div`
 	flex: 1;
 `;
 const CardTitle = styled.h3`
-	font-size: ${22 / 16}rem;
+	font-size: ${20 / 16}rem;
 	margin-bottom: 1rem;
 `;
 const CardDescription = styled.p`
-	font-size: ${22 / 16}rem;
+	font-size: ${20 / 16}rem;
 `;
 const LearnMore = styled.a`
 	display: flex;
